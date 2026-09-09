@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contacto | Lucía Molina Grajera - Arquitectura</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/contacto.css">
+
+  <script src="../js/main.js" defer></script>
+</head>
+
+<body>
+
+  <div
+    id="navbar"
+    data-navbar="../components/navbar.html"
+    data-home="../index.html"
+    data-pages="./">
+  </div>
+
+  <section class="contacto-section">
+
+    <p class="contacto-eyebrow">03 / CONTACTO</p>
+
+    <h1>Contacto</h1>
+
+    <div class="contacto-grid">
+
+      <!-- Datos de contacto -->
+      <div class="contacto-info">
+        <h2>Información de contacto</h2>
+
+        <ul>
+          <li>
+            <a href="tel:+34615118347">+34 615 118 347</a>
+          </li>
+
+          <li>
+            <a href="mailto:lmolinagrajera@gmail.com">lmolinagrajera@gmail.com</a>
+          </li>
+
+          <li>
+            <a
+              href="https://es.linkedin.com/in/luc%C3%ADa-molina-grajera-4631bb27a"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn - Lucía Molina Grajera
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Formulario de contacto -->
+      <div class="contacto-form">
+        <h2>Envíame un mensaje</h2>
+
+        <form
+          id="formContacto"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+
+          <!-- Sustituye TU_ACCESS_KEY_AQUI por tu clave real de Web3Forms -->
+          <input
+            type="hidden"
+            name="access_key"
+            value="3bd4829e-2fb3-4cb6-9cb4-90d180709168"
+          >
+
+          <!-- Asunto del correo -->
+          <input
+            type="hidden"
+            name="subject"
+            value="Nuevo mensaje desde el portfolio"
+          >
+
+          <!-- Redirección opcional tras enviar -->
+          <!--
+          <input
+            type="hidden"
+            name="redirect"
+            value="https://tu-dominio.com/gracias.html"
+          >
+          -->
+
+          <label for="name">Nombre *</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Correo electrónico *</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="phone">Teléfono</label>
+          <input type="tel" id="phone" name="phone">
+
+          <label for="message">Mensaje *</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <!-- Honeypot anti-spam de Web3Forms -->
+          <input type="checkbox" name="botcheck" style="display: none;">
+
+          <button type="submit">Enviar mensaje</button>
+
+          <div class="form-mensaje" id="formMensaje"></div>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="contacto-footer">
+      <span>LUCÍA MOLINA GRAJERA · ARQUITECTURA</span>
+      <span>2026</span>
+    </div>
+
+  </section>
+
+  <script>
+    const form = document.getElementById("formContacto");
+    const mensaje = document.getElementById("formMensaje");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      mensaje.textContent = "Enviando...";
+      mensaje.className = "form-mensaje form-mensaje--enviando";
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      })
+        .then(async (response) => {
+          const jsonResponse = await response.json();
+
+          if (response.status === 200) {
+            mensaje.textContent =
+  "Mensaje enviado correctamente. Gracias por contactar.";
+
+mensaje.className = "form-mensaje form-mensaje--correcto";
+
+form.reset();
+          } else {
+            mensaje.textContent =
+  "Error de conexión. Inténtalo de nuevo más tarde.";
+
+mensaje.className = "form-mensaje form-mensaje--error";
+          }
+        })
+        .catch(() => {
+          mensaje.textContent =
+            "Error de conexión. Inténtalo de nuevo más tarde.";
+
+          mensaje.style.color = "red";
+        });
+    });
+  </script>
+
+</body>
+</html>

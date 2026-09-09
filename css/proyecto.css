@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "Iscopeur";
+  src: url("../files/ISCOPEUR V2.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --red-dark: #8e1d18;
+  --red: #d52b1e;
+  --red-coral: #e85a4e;
+  --cream: #f7f4ed;
+  --font-display: "Iscopeur", "Arial Narrow", Arial, sans-serif;
+  --font-ui: Arial, Helvetica, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--red); color: var(--cream); font-family: var(--font-ui); }
+button { font: inherit; }
+button:focus-visible, a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+
+.carousel {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100svh;
+  padding: 82px 4vw 24px;
+  background: var(--red);
+}
+.carousel-index, .carousel-note, .project-number, .project-date, .sheet-header, .sheet-type, .sheet-summary dt, .sheet-footer { margin: 0; font-size: 11px; letter-spacing: .02em; text-transform: uppercase; }
+.carousel-note { justify-self: end; }
+.project-preview { align-self: center; width: min(100%, 1030px); margin: 45px auto 35px; }
+.project-cover { position: relative; display: block; width: 100%; aspect-ratio: 1.72 / 1; padding: 0; overflow: hidden; border: 0; background: var(--cream); cursor: pointer; }
+.project-cover img { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: filter .35s ease, transform .55s ease; }
+.project-cover-label { position: absolute; right: 17px; bottom: 14px; padding: 7px 9px; background: var(--cream); color: var(--red); font-size: 10px; text-transform: uppercase; opacity: 0; transition: opacity .2s ease; }
+.project-cover:hover img { filter: grayscale(0); transform: scale(1.015); }
+.project-cover:hover .project-cover-label { opacity: 1; }
+.project-preview-info { display: grid; grid-template-columns: 7% 1fr auto; gap: 15px; align-items: start; margin-top: 11px; }
+.project-title { padding: 0; border: 0; background: transparent; color: var(--cream); font-family: var(--font-display); font-size: clamp(27px, 3.4vw, 51px); letter-spacing: -.06em; line-height: .82; text-align: left; text-transform: uppercase; cursor: pointer; }
+.project-title:hover { opacity: .7; }
+.project-date { padding-top: 5px; text-align: right; }
+
+.project-sheet { position: fixed; z-index: 2000; inset: 0; display: none; overflow-y: auto; background: var(--cream); color: var(--red-dark); }
+.project-sheet.is-open { display: block; }
+.sheet-header { display: flex; justify-content: space-between; align-items: center; min-height: 74px; padding: 20px 4vw; background: var(--red-dark); color: var(--cream); }
+.close-sheet { padding: 0; border: 0; background: transparent; color: inherit; font-size: 11px; text-transform: uppercase; cursor: pointer; }
+.close-sheet span { margin-left: 5px; font-size: 19px; vertical-align: -2px; }
+.sheet-intro { display: grid; grid-template-columns: 22% minmax(0, 1fr); gap: 22px; min-height: 76vh; padding: 12vh 4vw 9vh; background: var(--cream); }
+.sheet-type { grid-column: 1; padding-top: 9px; }
+.sheet-intro h1 { grid-column: 2; max-width: 940px; margin: 0; font-family: var(--font-display); font-size: clamp(60px, 11vw, 175px); font-weight: 400; letter-spacing: -.09em; line-height: .69; text-transform: uppercase; }
+.sheet-summary { grid-column: 2; display: grid; grid-template-columns: minmax(200px, .72fr) 1fr; gap: clamp(30px, 7vw, 130px); align-self: end; max-width: 860px; margin-top: 65px; }
+.sheet-summary > p { margin: 0; font-family: var(--font-display); font-size: clamp(20px, 2.3vw, 34px); letter-spacing: -.04em; line-height: .96; }
+.sheet-summary dl { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 0; }
+.sheet-summary dl div { display: grid; gap: 5px; }
+.sheet-summary dd { margin: 0; font-size: 13px; line-height: 1.25; }
+.sheet-text { max-width: 690px; margin: 0 4vw 120px auto; padding: 75px 0 0; font-size: 16px; line-height: 1.48; }
+.sheet-text p { margin: 0 0 20px; }
+.project-gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 45px 18px; padding: 0 4vw 120px; }
+.gallery-item { margin: 0; }
+.gallery-item--wide { grid-column: span 8; }
+.gallery-item--small { grid-column: 4 / span 6; }
+.gallery-item img { display: block; width: 100%; height: auto; background: #e8e5de; }
+.gallery-item figcaption { margin-top: 9px; font-size: 10px; text-transform: uppercase; }
+.sheet-footer { display: flex; justify-content: space-between; align-items: end; min-height: 220px; padding: 25px 4vw; background: var(--red); color: var(--cream); }
+.close-sheet--bottom { padding-bottom: 3px; border-bottom: 1px solid var(--cream); }
+
+@media (max-width: 700px) {
+  .carousel { padding: 74px 20px 20px; }
+  .project-preview { margin-top: 35px; }
+  .project-cover { aspect-ratio: 1 / 1; }
+  .project-preview-info { grid-template-columns: 25px 1fr; gap: 10px; }
+  .project-date { grid-column: 2; padding-top: 0; text-align: left; }
+  .sheet-header, .sheet-intro, .project-gallery, .sheet-footer { padding-right: 20px; padding-left: 20px; }
+  .sheet-intro { grid-template-columns: 1fr; gap: 20px; min-height: auto; padding-top: 80px; padding-bottom: 70px; }
+  .sheet-type, .sheet-intro h1, .sheet-summary { grid-column: 1; }
+  .sheet-intro h1 { font-size: clamp(60px, 17vw, 110px); }
+  .sheet-summary { grid-template-columns: 1fr; gap: 38px; margin-top: 25px; }
+  .sheet-text { margin: 0 20px 80px; padding-top: 0; }
+  .project-gallery { gap: 30px; padding-bottom: 80px; }
+  .gallery-item--small { grid-column: span 12; }
+  .sheet-footer { flex-direction: column; align-items: flex-start; justify-content: space-between; min-height: 180px; }
+}
+/* ---------------------------------- */
+/* FLECHAS DEL CARRUSEL                */
+/* ---------------------------------- */
+
+.carousel-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-arrow {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid var(--cream);
+  background: transparent;
+  color: var(--cream);
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  background: var(--cream);
+  color: var(--red);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.project-preview {
+  display: none;
+}
+
+.project-preview.is-active {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .carousel-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+}

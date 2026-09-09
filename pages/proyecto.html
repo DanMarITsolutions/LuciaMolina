@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Viviendas plurifamiliares, proyecto de Lucía Molina Grajera.">
+  <title>Proyectos — Lucía Molina Grajera</title>
+
+  <link rel="stylesheet" href="../css/proyecto.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+
+  <script src="../js/main.js" defer></script>
+  <script src="../js/proyecto.js" defer></script>
+</head>
+<body class="project-page">
+  <div
+    id="navbar"
+    data-navbar="../components/navbar.html"
+    data-home="../index.html"
+    data-pages="./">
+  </div>
+
+  <main class="projects-main">
+    <section class="carousel" aria-label="Selección de proyectos">
+
+  <div class="carousel-top">
+    <p class="carousel-index">01 / Proyectos</p>
+
+    <div class="carousel-controls">
+      <button
+        class="carousel-arrow"
+        id="previous-project"
+        type="button"
+        aria-label="Ver proyecto anterior"
+      >
+        ←
+      </button>
+
+      <button
+        class="carousel-arrow"
+        id="next-project"
+        type="button"
+        aria-label="Ver proyecto siguiente"
+      >
+        →
+      </button>
+    </div>
+  </div>
+
+  <article class="project-preview is-active" data-project="viviendas">
+
+    <button
+      class="project-cover"
+      type="button"
+      aria-label="Abrir ficha de Viviendas plurifamiliares"
+    >
+      <img
+        src="../img/viviendas-plurifamiliares/portada1.jpg"
+        alt="Viviendas plurifamiliares"
+      >
+
+      <span class="project-cover-label">
+        Ver proyecto ↗
+      </span>
+    </button>
+
+    <div class="project-preview-info">
+      <p class="project-number">01</p>
+
+      <button class="project-title" type="button">
+        Viviendas plurifamiliares
+      </button>
+
+      <p class="project-date">
+        Proyecto académico · Sevilla
+      </p>
+    </div>
+
+  </article>
+    <article class="project-preview" data-project="escuela-infantil">
+
+    <button
+      class="project-cover"
+      type="button"
+      aria-label="Abrir ficha de Escuela infantil"
+    >
+      <img
+        src="../img/escuela-infantil/portada2.jpg"
+        alt="Escuela infantil"
+      >
+
+      <span class="project-cover-label">
+        Ver proyecto ↗
+      </span>
+    </button>
+
+    <div class="project-preview-info">
+      <p class="project-number">02</p>
+
+      <button class="project-title" type="button">
+        Escuela infantil
+      </button>
+
+      <p class="project-date">
+        Proyecto académico · Sevilla
+      </p>
+    </div>
+
+  </article>
+  <p class="carousel-note" id="carousel-counter" aria-live="polite">
+    01 / 01
+  </p>
+
+</section>
+  </main>
+
+  <section class="project-sheet" id="viviendas-sheet" aria-hidden="true" aria-labelledby="viviendas-title">
+    <div class="sheet-header">
+      <button class="close-sheet" type="button" aria-label="Cerrar ficha de proyecto">Cerrar <span aria-hidden="true">×</span></button>
+      <p>01 / Proyecto</p>
+    </div>
+
+    <div class="sheet-intro">
+      <p class="sheet-type">Vivienda colectiva · Sevilla</p>
+      <h1 id="viviendas-title">Viviendas<br>plurifamiliares</h1>
+
+      <div class="sheet-summary">
+        <p>Cuatro bloques de cinco plantas, organizados para equilibrar densidad, apertura y vida colectiva.</p>
+        <dl>
+          <div><dt>Tipología</dt><dd>Vivienda colectiva</dd></div>
+          <div><dt>Conjunto</dt><dd>4 bloques · 5 plantas</dd></div>
+          <div><dt>Distribución</dt><dd>4 viviendas por planta</dd></div>
+          <div><dt>Contexto</dt><dd>Proyecto académico</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="sheet-text">
+      <p>En un entorno urbano que busca equilibrio entre densidad y apertura, cuatro bloques de viviendas se organizan en torno a una idea clara: habitar lo colectivo sin perder lo individual.</p>
+      <p>Cada edificio, de cinco plantas y con una distribución regular de cuatro viviendas por nivel, establece una presencia firme pero no impositiva. Lo que singulariza al conjunto es el sistema de pérgolas que, a distintas alturas, enlaza los bloques creando recorridos inesperados y espacios intermedios que invitan a la pausa y al encuentro.</p>
+      <p>Estas conexiones ligeras introducen una segunda escala, más humana, que suaviza la rotundidad de los volúmenes. No se trata solo de una solución funcional o estética, sino de una apuesta por la convivencia: una arquitectura que no impone, sino que sugiere formas de relacionarse. Un gesto simple que convierte el tránsito en experiencia.</p>
+    </div>
+
+    <div class="project-gallery" aria-label="Documentación gráfica del proyecto">
+      <figure class="gallery-item gallery-item--wide">
+        <img src="../img/viviendas-plurifamiliares/planta-baja.jpg" alt="Planta baja de viviendas plurifamiliares">
+        <figcaption>01 / Planta baja</figcaption>
+      </figure>
+
+      <figure class="gallery-item gallery-item--wide">
+        <img src="../img/viviendas-plurifamiliares/planta-tipo.jpg" alt="Planta tipo de viviendas plurifamiliares">
+        <figcaption>02 / Planta tipo</figcaption>
+      </figure>
+
+      <figure class="gallery-item gallery-item--small">
+        <img src="../img/viviendas-plurifamiliares/axonometria.jpg" alt="Axonometría de viviendas plurifamiliares">
+        <figcaption>03 / Axonometría</figcaption>
+      </figure>
+
+      <figure class="gallery-item gallery-item--wide">
+        <img src="../img/viviendas-plurifamiliares/alzados.jpg" alt="Alzados de viviendas plurifamiliares">
+        <figcaption>04 / Alzados</figcaption>
+      </figure>
+    </div>
+
+    <footer class="sheet-footer">
+      <button class="close-sheet close-sheet--bottom" type="button">Volver a proyectos <span aria-hidden="true">↑</span></button>
+      <p>Lucía Molina Grajera · Arquitectura</p>
+    </footer>
+  </section>
+    <section class="project-sheet" id="escuela-infantil-sheet" aria-hidden="true" aria-labelledby="escuela-infantil-title">
+    <div class="sheet-header">
+      <button class="close-sheet" type="button" aria-label="Cerrar ficha de proyecto">Cerrar <span aria-hidden="true">×</span></button>
+      <p>02 / Proyecto</p>
+    </div>
+
+    <div class="sheet-intro">
+      <p class="sheet-type">Equipamiento educativo · Sevilla</p>
+      <h1 id="escuela-infantil-title">Escuela<br>infantil</h1>
+
+      <div class="sheet-summary">
+        <p>Un edificio que crece con quienes lo habitan, entre cubiertas inclinadas, celosías y patios privados para cada aula.</p>
+        <dl>
+          <div><dt>Tipología</dt><dd>Equipamiento educativo</dd></div>
+          <div><dt>Organización</dt><dd>Segregación por edades</dd></div>
+          <div><dt>Espacios</dt><dd>Patio privado por aula</dd></div>
+          <div><dt>Contexto</dt><dd>Proyecto académico</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="sheet-text">
+      <p>La arquitectura de esta escuela infantil parte de una premisa esencial: crecer es un proceso gradual, y el espacio debe acompañarlo con sutileza y coherencia. La organización del edificio responde a la lógica del desarrollo infantil, con una clara segregación de los distintos grupos por edad, no como barrera, sino como medida de cuidado y adaptación.</p>
+      <p>Esta diferenciación se expresa formalmente en un juego de cubiertas inclinadas que, más allá de dotar al conjunto de una identidad reconocible, articula los volúmenes y define alturas y atmósferas acordes a cada etapa. La luz, elemento fundamental en los primeros años, se filtra con precisión a través de muros cortina protegidos por celosías, que resguardan sin aislar, permitiendo una relación controlada con el exterior.</p>
+      <p>Cada aula se abre a su propio espacio libre, un patio privado que ofrece contacto directo con el aire y el juego, sin perder de vista la seguridad y el control. Así, la arquitectura no impone, sino que acompaña, adaptándose a los ritmos y necesidades de quienes comienzan a descubrir el mundo.</p>
+    </div>
+
+    <div class="project-gallery" aria-label="Documentación gráfica del proyecto">
+      <figure class="gallery-item gallery-item--wide">
+        <img src="../img/escuela-infantil/planta-baja.jpg" alt="Planta baja de la escuela infantil">
+        <figcaption>01 / Planta baja</figcaption>
+      </figure>
+
+      <figure class="gallery-item gallery-item--wide">
+        <img src="../img/escuela-infantil/planta-cubierta.jpg" alt="Planta de cubierta de la escuela infantil">
+        <figcaption>02 / Planta cubierta</figcaption>
+      </figure>
+
+      <figure class="gallery-item gallery-item--wide">
+        <img src="../img/escuela-infantil/alzados.jpg" alt="Alzados y secciones de la escuela infantil">
+        <figcaption>04 / Alzados y secciones</figcaption>
+      </figure>
+    </div>
+
+    <footer class="sheet-footer">
+      <button class="close-sheet close-sheet--bottom" type="button">Volver a proyectos <span aria-hidden="true">↑</span></button>
+      <p>Lucía Molina Grajera · Arquitectura</p>
+    </footer>
+  </section>
+</body>
+</html>

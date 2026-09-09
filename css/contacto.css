@@ -1,0 +1,205 @@
+.contacto-section {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  max-width: none;
+  margin: 0;
+  padding: 100px 4vw 24px;
+  font-family: var(--font-ui);
+  color: var(--cream);
+}
+
+.contacto-eyebrow {
+  margin: 0 0 24px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(247, 244, 237, 0.75);
+}
+
+.contacto-section h1 {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 11vw, 160px);
+  font-weight: 400;
+  letter-spacing: -0.08em;
+  line-height: 0.85;
+  margin: 0 0 48px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-self: center;
+  padding-top: 2vh;
+}
+
+@media (max-width: 700px) {
+  .contacto-section {
+    padding: 90px 20px 20px;
+  }
+
+  .contacto-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+.contacto-info h2,
+.contacto-form h2 {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  margin: 0 0 28px;
+}
+
+.contacto-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contacto-info li {
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(247, 244, 237, 0.2);
+  font-size: 15px;
+}
+
+.contacto-info li:last-child {
+  border-bottom: none;
+}
+
+.contacto-info a {
+  color: var(--cream);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.contacto-info a:hover {
+  border-color: var(--cream);
+  opacity: 0.85;
+}
+
+.contacto-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(247, 244, 237, 0.65);
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 100%;
+  padding: 8px 2px 12px;
+  margin-bottom: 26px;
+  border: none;
+  border-bottom: 1px solid rgba(247, 244, 237, 0.4);
+  border-radius: 0;
+  background: transparent;
+  color: var(--cream);
+  font-size: 15px;
+  font-family: var(--font-ui);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.contacto-form input::placeholder,
+.contacto-form textarea::placeholder {
+  color: rgba(247, 244, 237, 0.4);
+}
+
+.contacto-form input:hover,
+.contacto-form textarea:hover {
+  border-color: rgba(247, 244, 237, 0.7);
+}
+
+.contacto-form input:focus-visible,
+.contacto-form textarea:focus-visible {
+  outline: none;
+  border-color: var(--cream);
+}
+
+.contacto-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.contacto-form button {
+  background-color: transparent;
+  color: var(--cream);
+  border: 1px solid var(--cream);
+  padding: 13px 34px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.contacto-form button:hover {
+  background-color: var(--cream);
+  color: var(--red);
+}
+
+.contacto-form button:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 5px;
+}
+
+.form-mensaje {
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.contacto-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 14px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(247, 244, 237, 0.35);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------- */
+/* MENSAJE DEL FORMULARIO              */
+/* ---------------------------------- */
+
+.form-mensaje {
+  min-height: 28px;
+  margin-top: 24px;
+
+  color: #f7f4ed;
+
+  font-family: "Iscopeur", "Arial Narrow", Arial, sans-serif;
+  font-size: clamp(18px, 1.8vw, 26px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* Mientras se envía */
+
+.form-mensaje--enviando {
+  opacity: 0.7;
+}
+
+/* Mensaje enviado */
+
+.form-mensaje--correcto {
+  color: #f7f4ed;
+}
+
+/* Error: sigue siendo marfil para no introducir verde o rojo extra */
+
+.form-mensaje--error {
+  color: #f7f4ed;
+}
